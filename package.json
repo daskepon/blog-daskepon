@@ -1,6 +1,6 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "blog-daskepon",
+  "version": "1.0.0",
   "private": true,
   "hexo": {
     "version": "3.8.0"
@@ -12,11 +12,14 @@
     "hexo-generator-index": "^0.2.1",
     "hexo-generator-tag": "^0.2.0",
     "hexo-renderer-ejs": "^0.3.1",
-    "hexo-renderer-stylus": "^0.3.3",
     "hexo-renderer-marked": "^0.3.2",
-    "hexo-server": "^0.3.1"
+    "hexo-renderer-stylus": "^0.3.3",
+    "hexo-server": "^0.3.1",
+    "markdownlint": "^0.11.0",
+    "markdownlint-cli": "^0.13.0"
   },
   "scripts": {
-    "serve": "hexo server"
+    "serve": "hexo server",
+    "markdownlint": "markdownlint source/_posts/ --config .markdownlint.json"
   }
 }
