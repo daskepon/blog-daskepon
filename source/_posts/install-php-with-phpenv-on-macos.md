@@ -23,7 +23,13 @@ $ git clone https://github.com/php-build/php-build.git ~/.phpenv/plugins/php-bui
 ### Install libraries to build php
 
 ```shell
-$ brew install re2c openssl bison libxml2 autoconf automake icu4c libjpeg libpng libmcrypt
+$ brew install re2c openssl bison libxml2 autoconf automake icu4c libjpeg libpng libmcrypt libzip
+```
+
+### If Mojave
+
+```shell
+$ sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 ```
 
 *[Homebrew](https://brew.sh/) is needed*
@@ -32,6 +38,7 @@ $ brew install re2c openssl bison libxml2 autoconf automake icu4c libjpeg libpng
 
 ```sh
 # phpenv
+export PATH="/usr/local/opt/bison/bin:$PATH"
 export PHPENV_ROOT="$HOME/.phpenv"
 export PATH="$PHPENV_ROOT/bin:$PATH"
 eval "$(phpenv init -)"
@@ -60,7 +67,7 @@ $ phpenv versions
 ### How to install the specified version of PHP.
 
 ```shell
-$ phpenv install 7.2.8
+$ phpenv install 7.3.7
 ```
 
 *Run this command after you install a new version of PHP*
@@ -72,13 +79,13 @@ $ phpenv rehash
 ### How to use the specified version of PHP at global.
 
 ```shell
-$ phpenv global 7.2.8
+$ phpenv global 7.3.7
 ```
 
 How to use the specified version of PHP at local ( directory ).
 
 ```shell
-$ phpenv local 7.2.8
+$ phpenv local 7.3.7
 ```
 
 This command will create `.php-version` file at current directory.
