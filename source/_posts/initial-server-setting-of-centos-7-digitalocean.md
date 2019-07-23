@@ -31,6 +31,14 @@ After `yum update`, you need to reboot servers.
 # reboot
 ```
 
+### Settings of SeLinux
+
+Allow connections to port numbers set in `/ etc / ssh / sshd_config` on selinux.
+
+```shell
+# semanage port -a -t ssh_port_t -p tcp {SSH_PORT_NUMBER}
+```
+
 ### SSH Settings for security
 
 ```shell
@@ -53,15 +61,7 @@ Restart sshd.
 Check whether the SSH port number has been changed.
 
 ```shell
-# ss -antu | grep ssh
-```
-
-### Settings of SeLinux
-
-Allow connections to port numbers set in `/ etc / ssh / sshd_config` on selinux.
-
-```shell
-# semanage port -a -t ssh_port_t -p tcp {SSH_PORT_NUMBER}
+# netstat -an | grep LISTEN | grep {SSH_PORT_NUMBER}
 ```
 
 ## Add user
